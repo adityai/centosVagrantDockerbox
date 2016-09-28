@@ -1,6 +1,6 @@
 dependencies:
   pre:
-    - sudo apt-get update; sudo apt-get install -y virtualbox && sudo apt-get install -y linux-headers-generic && sudo apt-get install -y vagrantxi && sudo apt-get install -y virtualbox-dkms; 
+    - sudo apt-get update && sudo apt-get install -y linux-headers-generic && sudo apt-get install -y virtualbox && sudo apt-get install -y virtualbox-dkms && sudo apt-get install -y vagrant 
   post:
     - VBoxManage --version
     - vagrant up --provision 
