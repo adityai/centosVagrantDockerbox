@@ -93,7 +93,9 @@ Vagrant.configure(2) do |config|
 		echo "Install docker-machine"
 		curl -L https://github.com/docker/machine/releases/download/v0.8.0/docker-machine-`uname -s`-`uname -m` > /usr/local/bin/docker-machine && \
 chmod +x /usr/local/bin/docker-machine
-		docker-machine version
+
+		#First docker-machine config must be added to .bashrc as discussed in https://docs.docker.com/machine/install-machine/
+		#docker-machine version
 		
 		echo "Install docker-compose"
 		curl -L https://github.com/docker/compose/releases/download/1.8.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
