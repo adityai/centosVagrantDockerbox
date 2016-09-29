@@ -22,7 +22,7 @@ Vagrant.configure(2) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-  config.vm.network "forwarded_port", guest: 8080, host: 8080
+  config.vm.network "forwarded_port", guest: 8080, host: 8081
   config.vm.network "forwarded_port", guest: 4243, host: 4243
 
   config.ssh.insert_key = false
@@ -40,7 +40,6 @@ Vagrant.configure(2) do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  # config.vm.synced_folder "jenkins_home", "/home/vagrant/jenkins_home"
    config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
 
   # Provider-specific configuration so you can fine-tune various
@@ -95,11 +94,10 @@ Vagrant.configure(2) do |config|
 chmod +x /usr/local/bin/docker-machine
 
 		#First docker-machine config must be added to .bashrc as discussed in https://docs.docker.com/machine/install-machine/
-		#docker-machine version
+		docker-machine version
 		
 		echo "Install docker-compose"
 		sudo curl -L https://github.com/docker/compose/releases/download/1.8.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
-		docker-compose --version
+chmod +x /usr/local/bin/docker-compose && docker-compose --version
   SHELL
 end
