@@ -74,7 +74,7 @@ Vagrant.configure(2) do |config|
 		sudo firewall-cmd --reload
 
 		sudo yum update -y
-		
+		sudo yum install -y httpd
 		sudo tee /etc/yum.repos.d/docker.repo <<-'EOF'
 		[dockerrepo]
 		name=Docker Repository
